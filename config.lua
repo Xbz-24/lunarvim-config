@@ -3,6 +3,9 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
+-- Define the key mappings
+lvim.keys.normal_mode["gt"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["gT"] = ":BufferLineCyclePrev<CR>"
 lvim.plugins = {
 
   {
@@ -32,4 +35,10 @@ lvim.plugins = {
       })
     end,
   },
+}
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+Terminal",
+  f = { "<cmd>ToggleTerm<cr>", "Floating terminal" },
+  v = { "<cmd>2ToggleTerm size=30 direction=vertical<cr>", "Split vertical" },
+  h = { "<cmd>2ToggleTerm size=30 direction=horizontal<cr>", "Split horizontal" },
 }
